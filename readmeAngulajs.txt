@@ -15,3 +15,4 @@ Directives: Html con súper poderes
 Controllers: contiene la lógica de la app vía $scope
 Factories y Services- Organiza y Comparte código en tu app
 Filters- Formato a tus datos.
+
