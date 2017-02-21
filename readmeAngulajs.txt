@@ -16,3 +16,7 @@ Controllers: contiene la lógica de la app vía $scope
 Factories y Services- Organiza y Comparte código en tu app
 Filters- Formato a tus datos.
 
+$watch-> ve si un valor se modifico o no, Angular lo crea automaticamente, Lista de atributos en el UI que angular observa a que cambien
+$digest-> Actualiza automaticamente la vista y el controlador, si algun valor se modifica
+
+
