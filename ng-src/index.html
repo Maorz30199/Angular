@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title="Lista de tareas">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="controller.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="controllerApp">
+  <ul class="no-list" ng-cloak>
+    <li ng-repeat="repo in repos"></li>
+      <h1>{{repo.full_name}}</h1>
+      <img ng-src="{{repo.owner.avatar_url}}" >
+  </ul>
+</body>
