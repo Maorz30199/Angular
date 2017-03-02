@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="services/ClimaService.js"></script>
+    <script type="text/javascript" src="controllers/ClimaController.js"></script>
+    <title>Clima Popayán</title>
+  </head>
+  <body ng-app="app">
+
+    <div ng-controller="ClimaController">
+
+      <input ng-model="ciudad" type="text" placeholder="Ciudad">
+      <input ng-model="pais" type="text" placeholder="País">
+      <button ng-click="refresh(ciudad, pais)" type="button">Cargar Clima</button>
+
+      <h1>Description: {{description}}</h1>
+      <h2>Temperatura: {{temp}}</h2>
+
+    </div>
+
+  </body>
+</html>

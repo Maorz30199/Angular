@@ -1,0 +1,29 @@
+#Atajos HTML
+'.text.basic.html':
+#INDEX BASICO ANGULAR
+  'index':
+    'prefix': 'idx'
+    'body': """
+      <!DOCTYPE>
+      <html>
+        <head>
+          <meta charset="utf-8"></meta>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"/>
+          <title>$1</title>
+        </head>
+        <body>
+        </body>
+      </html>
+     """
+#Atajos javascript
+'.source.js':
+#Modulo
+  'Modulo':
+    'prefix': 'mdl'
+    'body': 'var $1 = angular.module("$2",[]);'
+#controllers
+  'Controlador':
+    'prefix': 'ctr'
+    'body': """
+      controller("$1",function($2){})$3
+    """

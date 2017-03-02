@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="App">
+<html ng-app="Rout">
 <head>
   <meta charset="utf-8">
   <title="Angular">
   <link rel="stylesheet" href="autocomplete-jquery-ui.structure.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-  <script src="controller.js"></script>
+  <script src="https://code.angularjs.org/1.6.1/angular-route.min.js"></script>
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="autocomplete-jquery-ui.js">  </script>
+  <script src="app.js"></script>
+  <script src="autocomplete-jquery-ui.js"></script>
+  <script src="controller.js"></script>
+  <script src="directives.js"></script>
   <style>
     .circular{
       border-radius: 50%;
@@ -24,15 +27,19 @@
       margin: 0px;
     }
   </style>
+  <base href="/">
 </head>
-<body ng-controller="controllerApp">
+<body>
   <input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
   <ul class="no-list">
     <li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name">
-      <div class="circular" back-img="{{repo.owner.avatar_url}}">
-      </div>
-      <h1>{{repo.full_name}}</h1>
+      <a href="#/repo/{{repo.name}}">
+        <div class="circular" back-img="{{repo.owner.avatar_url}}">
+        </div>
+        <h1>{{repo.full_name}}</h1>
+      </a>
     </li>
     <a ng-click="main_repo = null">Limpiar</a>
   </ul>
+  <div ng-view>  </div>
 </body>

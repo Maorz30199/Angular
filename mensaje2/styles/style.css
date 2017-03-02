@@ -1,0 +1,28 @@
+h1{
+  font-size: 30px;
+  color: #56fa21;
+}
+
+.titulo{
+  font-size: 35px;
+  color: #333333;
+  margin: 10px 20px 10px 20px;
+}
+
+.contenedor{
+  background: #999999;
+  padding: 10px;
+}
+
+.contenedor h1{
+  background: #33b5e5;
+}
+
+.contenedor button{
+  background: #33b5e5;
+  color: #ffffff;
+}
+
+.contenedor button:hover{
+  background: #00277a;
+}

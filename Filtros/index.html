@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="Controllers/Controller.js"></script>
+    <script type="text/javascript" src="filters/Reversefilter.js"></script>
+    <title>Filtros</title>
+  </head>
+  <body ng-app="app" ng-init="var=1500;obj={color:'rojo',tamanio:'mediano'};var2='Maorz'">
+    <h1>Moneda</h1>
+    <p>{{var|currency}}</p>
+    <p>{{var|currency: '%':3}}</p>
+    <p>{{obj|json}}  </p>
+    <h1>Mayusculas</h1>
+    <p>{{var2|uppercase}}</p>
+    <h1>Numero</h1>
+    <p>  {{var|number:2}}</p>
+    <div ng-controller="AnimalController as animalC">
+      <select ng-model="orden">
+        <option ng-repeat="a in attr" ng-value="a">{{a}}</option>
+      </select>
+      <input type="text" ng-model="filtro">
+      <ul>
+        <li ng-repeat="an in animals | orderBy :orden : true | filter :filtro" >
+          <h2>{{an.name}}</h2>
+          <h3>{{an.raza}}</h3>
+          <h4>{{an.genero}}</h4>
+        </li>
+      </ul>
+
+      <h1>Reverso</h1>
+      <input type="text" ng-model="txt">
+      <p>{{txt|Reversefilter}}</p>
+    </div>
+  </body>
+</html>

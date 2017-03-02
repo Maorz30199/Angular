@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"/>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript"
+     src="Controller/UserController.js"></script>
+    <link rel="stylesheet" href="styles/style.css" >
+    <title>Registro y Busqueda</title>
+  </head>
+  <body>
+    <form class="formulario" name="form" novalidate>
+      <input ng-model="user.usr" type="text" name="usr"
+          placeholder="Nombre de Usuario"
+          required
+          >
+      <input ng-model="user.edad"
+        type="number" name="edad" placeholder="Edad"
+        min="18" max="90" required
+        >
+      <div ng-show="form.edad.$error.min || form.edad.$error.max">
+        Necesitas ser mayor de edad y menor de 90.
+      </div>
+      <input ng-model="user.email"
+        type="email" name="email" placeholder="Email"
+        required
+        >
+      <div ng-show="form.email.$error.email">
+          El email tiene un mal formato.
+      </div>
+      <input ng-model="user.pass"
+        type="password" name"pass" placeholder="Contraseña"
+        required
+        >
+
+      <div ng-show="form.$submitted">
+        Faltan llenar campos.
+      </div>
+      <input type="reset" name="reset" value="Reiniciar">
+      <input type="submit" name="submit" value="OK">
+    </form>
+  </body>
+</html>

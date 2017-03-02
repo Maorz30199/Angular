@@ -1,0 +1,14 @@
+.formulario input{
+  display:block;
+  margin: 15px;
+}
+
+.formulario input.ng-touched.ng-invalid{
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.formulario input.ng-touched.ng-valid{
+  background: #33b5e5;
+  color: #ffffff;
+}
