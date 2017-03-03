@@ -1,7 +1,24 @@
-angular.module("Rout",["ngRoute"])
-  .config(function($routeProvider, $locationProvider){
-    $routeProvider
-      .when("/",{
+'use strict';
+
+angular.module("Rout",["ui.router"])
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider){
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+    .state('app',{
+      url: '/',
+      templateUrl: 'templates/home.html',
+      controller: 'controllerApp'
+    })
+    .state('repo',{
+    url: '/repo/:name',
+    templateUrl: 'templates/repo.html',
+    controller: 'RepoController'
+  });
+  $locationProvider.html5Mode(true);
+});
+      /*.when("/",{
         controller: "controllerApp",
         templatesUrl: "templates/home.html"
       })
@@ -12,4 +29,4 @@ angular.module("Rout",["ngRoute"])
       .otherwise({redirecTo: "/"});
 
       $locationProvider.html5Mode(true);
-  })
+  })*/

@@ -20,10 +20,12 @@ angular.module("Rout")
     }
 })
 
-.controller("RepoController",function($scope,$http,$routeParams){
+.controller("RepoController",function($scope,$http,$stateParams,$state){
   $scope.repo= {};
-  $http.get("https://api.github.com/repos/Maorz30199/"+$routeParams.name)
+  console.log($stateParams.name);
+  $http.get("https://api.github.com/repos/Maorz30199/"+$stateParams.name)
     .then(function(response){
+      console.log($stateParams.name);
       $scope.repo = response.data;
     },
     function(err){
