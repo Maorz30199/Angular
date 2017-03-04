@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module("Rout",["ui.router"])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
